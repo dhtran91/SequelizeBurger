@@ -1,0 +1,97 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#">What-Da-Burger</a>
+      </a>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <img id="burgerLogo" class="img-responsiveness center-block" src="https://image.freepik.com/free-vector/tasty-burger-with-variety-of-ingredients_23-2147633227.jpg">
+      <p class="text-uppercase text-center">Create your own burger.</p>
+      <p class="text-uppercase text-center">Eat.</p>
+      <p class="text-uppercase text-center">Repeat.</p>
+    </div>
+  </div>
+  <section class="row">
+    <div class="panel panel-success col-md-4 col-md-offset-1 col-xs-12">
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+        <h2>Burgers</h2>
+      </div>
+      <!-- Table -->
+      <table class="table table-hover text-center">
+        <tr>
+          <th>
+            Burger Name
+          </th>
+          <th>
+            Devour
+          </th>
+        </tr>
+
+        {{#each burgers}} {{#unless devoured}}
+        <tr>
+          <td data="{{burgers}}">{{burger_name}}</td>
+          <td>
+            <button class="devour-burger btn" data-id="{{id}}">
+              Devour it!
+            </button>
+          </td>
+        </tr>
+        {{/unless}} {{/each}}
+      </table>
+    </div>
+    <div class="panel panel-danger col-md-4 col-md-offset-2 col-xs-12">
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+        <h2>Devoured Burgers</h2>
+      </div>
+
+      <!-- Table -->
+      <table class="table table-hover text-center">
+        <tr>
+          <th>
+            Burger Name
+          </th>
+        </tr>
+
+        {{#each burgers}} {{#if devoured}}
+        <tr>
+          <td data="{{burgers}}">{{burger_name}}</td>
+        </tr>
+        {{/if}} {{/each}}
+      </table>
+    </div>
+  </section>
+
+
+
+
+  <section class="row">
+    <div class="col-md-12">
+      
+      <form class="create-form form-inline">
+<h2>Add your own Burger!</h2>
+        <div class="form-group">
+          <label for="ca">Burger:</label>
+          <input type="text" id="burgerName" name="name">
+        </div>
+
+        <button type="submit" class="btn">Add Burger</button>
+      </form>
+    </div>
+
+
+  </section>
+</div>
